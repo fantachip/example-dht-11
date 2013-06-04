@@ -42,6 +42,8 @@ the dht library will call this function with one of the following values for the
 	
 Since our "uart.c" code in the UART_Init function also connects the stdio to UART, we can also now use printf ans scanf to read and write to and from the serial port. This is very handy because we don't need to write any functions to implement printf functionality for the serial port. 
 
+The mcu sends the temperature data to the PC application as two 16 bit integers encoded as hex numbers. Hex encoding is chosen simply so that we can use other characters that are not part of [0-9a-f] group as control characters. When a temperature reading is successful, the MCU will send letter 'y' followed by two hex encoded integers representing the temperature and humidity reading. Like this: y01af03de\r\n. Each such sequence ends with a line feed (the line feed is used to detect a reading). 
+
 THE APPLICATION
 ===============
 The PC application is written in "processing language" and is located in the main.ps file. You can download the processing language from https://www.processing.org/. Just copy and paste the contents of the main.ps file into a new processing sketch and run it. It should automatically connect to the first available serial port and attempt to read the data from there. If you get a null pointer exception, just make sure that a USB to serial adapter is connected to the computer and that it's TX/RX pins are connected to TX/RX on the ATMega88.

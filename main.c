@@ -53,9 +53,9 @@ int main(){
 	DHT_Init(&dht, dhtproc);
 	while(1){
 		if(DHT_Read11(&dht) == DHTLIB_OK){
-			printf("Temperature: %d, Humidity: %d\r\n", (int)dht.temperature * 100, (int)dht.humidity * 100);
+			printf("y%04x%04x\r\n", (int)dht.temperature * 100, (int)dht.humidity * 100);
 		} else {
-			printf("DHT ERROR!\r\n");
+			printf("n\r\n", 4, 256);
 			_delay_ms(1000);
 		}
 	}
