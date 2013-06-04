@@ -16,7 +16,7 @@ We are also using the USBasp USB programmer that ocnnects to the MOSI, MISO, SCK
 http://www.ebay.co.uk/sch/i.html?_odkw=usbasp&_osacat=0&_from=R40&_trksid=m570.l1313&_nkw=usbasp&_sacat=0
 
 Image of the sensor we will be using: 
-![DHT-11 Sensor](http://www.google.com/imgres?safe=off&client=ubuntu&hs=ipy&sa=X&channel=fs&tbm=isch&tbnid=IqPlmu2F3rX1CM:&imgrefurl=http://learning.grobotronics.com/arduino-humidity-sensor-dht11-tutorial.html&docid=YrbtbyVGadDCTM&imgurl=http://learning.grobotronics.com/images/Tutorials/DHT11_Pins.png&w=516&h=378&ei=1UauUfKHHsmB4ATsLw&zoom=1&ved=1t:3588,r:3,s:0,i:92&iact=rc&dur=5&page=1&tbnh=166&tbnw=241&start=0&ndsp=11&tx=124&ty=75&biw=1366&bih=561)
+![DHT-11 Sensor](http://learning.grobotronics.com/images/Tutorials/DHT11_Pins.png)
 
 So let's make a list: 
 You will need an AVR chip such as ATMEGA88,
