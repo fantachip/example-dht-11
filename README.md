@@ -2,7 +2,7 @@ INTRODUCTION
 ============
 The DHT-11 is a small humidity and temperature sensor that you can connect to your arduino and get readings for temperature and humidity in the environment. But I'm not going to be using an arduino in this example. Instead I will use the AVR microcontroller directly and make an example that will read data from the DHT 11 sensor and send it to the computer over the serial port. 
 
-![Schematic](http://postimg.org/image/iu3wurv23/)
+![Schematic](http://s17.postimg.org/h2axzvbpb/schema.jpg)
 
 WHAT YOU WILL NEED
 ============
