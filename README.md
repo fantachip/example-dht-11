@@ -43,7 +43,25 @@ The code consists of a library "dht.c" that implements communication protocol wi
 
 To use the DHT library, you need to define a function called "dhtproc" that will be called by the dht library while it is running. The purpose of this function is to provide application speciffic services to the DHT library, such as reading the value of the pin that the DHT sensor is connected to. This way the library code is independent of the application speciffic configuraiton. 
 
-int16_t dhtproc(dht_request_t req, uint16_t arg)
+	static inline int16_t dhtproc(dht_request_t req, uint16_t arg){
+		switch(req){
+			case DHT_READ_PIN: 
+				..
+				break;
+			case DHT_WRITE_PIN:
+				..
+				break;
+			case DHT_DELAY_MS:
+				..
+				break;
+			case DHT_DELAY_US:
+				..
+				break;
+			default:
+				return -1;
+		}
+		return 0;
+	}
 
 the dht library will call this function with one of the following values for the "req" parameter: 
 - DHT_READ_PIN - to read the value of pin that dht is connected to
