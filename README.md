@@ -79,4 +79,50 @@ THE APPLICATION
 ===============
 The PC application is written in "processing language" and is located in the main.ps file. You can download the processing language from https://www.processing.org/. Just copy and paste the contents of the main.ps file into a new processing sketch and run it. It should automatically connect to the first available serial port and attempt to read the data from there. If you get a null pointer exception, just make sure that a USB to serial adapter is connected to the computer and that it's TX/RX pins are connected to TX/RX on the ATMega88.
 
+	import processing.serial.*; 
+	 
+	Serial myPort;    // The serial port
+	PFont myFont;     // The display font
+	String inString;  // Input string from serial port
+	int lf = 10;      // ASCII linefeed 
+	 
+	void setup() { 
+		size(400,200); 
+		// You'll need to make this font with the Create Font Tool 
+		myFont = createFont("SansSerif",18); 
+		textFont(myFont, 18); 
+		// List all the available serial ports: 
+		println(Serial.list()); 
+		// I know that the first port in the serial list on my mac 
+		// is always my  Keyspan adaptor, so I open Serial.list()[0]. 
+		// Open whatever port is the one you're using. 
+		if(Serial.list().length == 0){
+			println("No serial interface found!"); 
+			exit();
+		} 
+		println("Using serial interface: "+Serial.list()[0]);
+		myPort = new Serial(this, Serial.list()[0], 9600); 
+		myPort.bufferUntil(lf); 
+		inString = "";
+	} 
+	 
+	void draw() { 
+		background(0); 
+		if(inString.length() == 0){
+			text("Waiting for data...", 10, 50);
+		} else if(inString.charAt(0) == 'y'){
+			text(
+				"Temperature: " + unhex(inString.substring(1, 5)) + 
+				"\nHumidity: " + unhex(inString.substring(5, 9)), 10,50);
+		} else if(inString.charAt(0) == 'n'){
+			text("Sensor error!", 10, 50);
+		} else {
+			text("Unknown error!", 10, 50);
+		}
+	} 
+	 
+	void serialEvent(Serial p) { 
+		inString = p.readString(); 
+	} 
+
 When everything is connected correctly, you should see the current temperature and humidity displayed on the computer screen. 
