@@ -2,11 +2,18 @@ INTRODUCTION
 ============
 The DHT-11 is a small humidity and temperature sensor that you can connect to your arduino and get readings for temperature and humidity in the environment. But I'm not going to be using an arduino in this example. Instead I will use the AVR microcontroller directly and make an example that will read data from the DHT 11 sensor and send it to the computer over the serial port. 
 
+![Schematic](http://postimg.org/image/iu3wurv23/)
+
 WHAT YOU WILL NEED
 ============
-First things first - the basic setup is the ATMega88 chip sitting on a breadboard, connected to a power supply and having the sensor pluged in to it. The TX/RX pins of the chip are connected directly to a TTL-USB adapter that connects the to the computer through USB. On the computer side, the software can communicate with the chip through the virtual USB serial interface (/dev/ttyUSB0 on linux). The USB to serial adapter converts usb signals to a stream of serial data that can be read by the microcontroller. 
+First things first - the basic setup is the ATMega88 chip sitting on a breadboard, connected to a power supply and having the sensor pluged in to it. The TX/RX pins of the chip are connected directly to a TTL-USB adapter that connects the to the computer through USB. On the computer side, the software can communicate with the chip through the virtual USB serial interface (/dev/ttyUSB0 on linux). The USB to serial adapter converts usb signals to a stream of serial data that can be read by the microcontroller.
+
+http://www.ebay.co.uk/sch/i.html?_odkw=PL2303&_osacat=0&_from=R40&_trksid=p2045573.m570.l1313.TR2.TRC0&_nkw=PL2303HX&_sacat=0
 
 We are also using the USBasp USB programmer that ocnnects to the MOSI, MISO, SCK and RESET pins on the microcontroller. You can also use USBasp as a power supply to power the chip directly from USB while testing the code. So it's a very good setup for quickly testing new code on the avr withough the need to have an Arduino or any development board. 
+
+![USBasp](http://d1gsvnjtkwr6dd.cloudfront.net/large/AC-PG-USBASP_LRG.jpg) 
+http://www.ebay.co.uk/sch/i.html?_odkw=usbasp&_osacat=0&_from=R40&_trksid=m570.l1313&_nkw=usbasp&_sacat=0
 
 So let's make a list: 
 You will need an AVR chip such as ATMEGA88,
