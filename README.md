@@ -88,18 +88,15 @@ The PC application is written in "processing language" and is located in the mai
 	 
 	void setup() { 
 		size(400,200); 
-		// You'll need to make this font with the Create Font Tool 
 		myFont = createFont("SansSerif",18); 
 		textFont(myFont, 18); 
-		// List all the available serial ports: 
 		println(Serial.list()); 
-		// I know that the first port in the serial list on my mac 
-		// is always my  Keyspan adaptor, so I open Serial.list()[0]. 
-		// Open whatever port is the one you're using. 
+		
 		if(Serial.list().length == 0){
 			println("No serial interface found!"); 
 			exit();
 		} 
+		
 		println("Using serial interface: "+Serial.list()[0]);
 		myPort = new Serial(this, Serial.list()[0], 9600); 
 		myPort.bufferUntil(lf); 
