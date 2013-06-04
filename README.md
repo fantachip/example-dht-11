@@ -19,6 +19,8 @@ Image of the sensor we will be using:
 
 ![DHT-11 Sensor](http://learning.grobotronics.com/images/Tutorials/DHT11_Pins.png)
 
+Ebay: http://www.ebay.co.uk/sch/i.html?_odkw=PL2303HX&_osacat=0&_from=R40&_trksid=p2045573.m570.l1313.TR3.TRC0&_nkw=DHT-11&_sacat=0
+
 So let's make a list: 
 You will need an AVR chip such as ATMEGA88,
 - a DHT11 sensor (Datasheet: http://www.micro4you.com/files/sensor/DHT11.pdf)
