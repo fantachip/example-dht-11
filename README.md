@@ -16,6 +16,7 @@ We are also using the USBasp USB programmer that ocnnects to the MOSI, MISO, SCK
 http://www.ebay.co.uk/sch/i.html?_odkw=usbasp&_osacat=0&_from=R40&_trksid=m570.l1313&_nkw=usbasp&_sacat=0
 
 Image of the sensor we will be using: 
+
 ![DHT-11 Sensor](http://learning.grobotronics.com/images/Tutorials/DHT11_Pins.png)
 
 So let's make a list: 
